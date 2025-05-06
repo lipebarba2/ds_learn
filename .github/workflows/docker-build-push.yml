@@ -2,7 +2,7 @@ name: First Pipeline \o/
 
 on:
   push:
-    branches: [ "main" ]  # ou "master", dependendo do seu branch principal
+    branches: [ "master" ]  # ou "master", dependendo do seu branch principal
   workflow_dispatch:
 
 jobs:
