@@ -3,7 +3,7 @@ name: First Pipeline \o/
 on:
   push:
     branches:
-      - main  # ou a branch que preferir
+      - master  # ou a branch que preferir
 
 jobs:
   build-and-push:
