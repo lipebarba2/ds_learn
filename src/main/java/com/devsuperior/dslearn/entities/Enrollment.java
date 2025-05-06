@@ -17,6 +17,7 @@ import java.time.Instant;
 @Table(name = "tb_enrollment")
 public class Enrollment {
 
+
     private EnrollmentPK id = new EnrollmentPK();
     private Instant enrollMoment;
     private Instant refundMoment;
