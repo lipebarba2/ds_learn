@@ -23,9 +23,21 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and push Docker image
+      - name: First Pipeline \o/
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
           tags: felipebarboza/sofia:latest
+      - name: Deploy na VM Oracle
+        uses: appleboy/ssh-action@master
+        with:
+          host: 129.148.55.47
+          username: ubuntu
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            docker login -u felipebarboza -p ${{ secrets.DOCKER_PASSWORD }}
+            docker pull felipebarboza/sofia:latest
+            docker stop sofia-app || true
+            docker rm sofia-app || true
+            docker run -d -p 8081:8081 --name sofia-app felipebarboza/sofia:latest
