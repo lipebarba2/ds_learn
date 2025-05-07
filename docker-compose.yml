@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  dslearn:
+    build: .
+    ports:
+      - "8081:8081"
+    container_name: dslearn-app

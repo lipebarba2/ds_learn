@@ -8,7 +8,7 @@ public class EnrollmentPK {
     private User user;
     private Offer offer;
 
-    public EnrollmentPK(User user, Offer offer){
+    public EnrollmentPK(){
         this.user = new User();
         this.offer = new Offer();
     }
