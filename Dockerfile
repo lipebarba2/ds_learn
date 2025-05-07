@@ -10,7 +10,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Etapa 2: Runtime
-FROM amazoncorretto:17
+FROM amazoncorretto:21
 WORKDIR /app
 
 # Copia o JAR gerado na etapa anterior
@@ -21,3 +21,4 @@ EXPOSE 8081
 
 # Comando para rodar a aplicação
 ENTRYPOINT ["java", "-jar", "app.jar"]
+

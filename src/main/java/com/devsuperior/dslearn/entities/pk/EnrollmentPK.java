@@ -5,6 +5,7 @@ import com.devsuperior.dslearn.entities.User;
 
 public class EnrollmentPK {
 
+
     private User user;
     private Offer offer;
 
