@@ -1,8 +1,10 @@
-version: '3.8'
 
 services:
-  dslearn:
+  app:
     build: .
     ports:
       - "8081:8081"
-    container_name: dslearn-app
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://129.148.55.47:5432/teste
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: admin123
